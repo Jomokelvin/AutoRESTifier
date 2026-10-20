@@ -67,4 +67,12 @@ The first run downloads Maven dependencies, so it needs internet unless the depe
 - `GET /api/endpoints`
 - `POST /generated/{id}` JSON: `{"args":[12,8]}`
 
+# AutoRESTifier
+
+A Java tool that exposes compiled Java classes and JARs as REST API endpoints.
+
+## Screenshot
+
+![AutoRESTifier demo](screenshots/autorestifier-demo.png)
+
 This is an MVP foundation, not a production-ready arbitrary-code hosting platform.
