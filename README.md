@@ -74,5 +74,6 @@ A Java tool that exposes compiled Java classes and JARs as REST API endpoints.
 ## Screenshot
 
 ![AutoRESTifier demo](screenshots/autorestifier-demo.png)
+![AutoRESTifier demo](screenshots/autorestifier-demo-extra.png)
 
 This is an MVP foundation, not a production-ready arbitrary-code hosting platform.
