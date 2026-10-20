@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AutoRESTifier — Java to REST</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <a class="brand" href="#"><span class="brand-mark">A</span><span>AutoRESTifier<small>JAVA API STUDIO</small></span></a>
+    <div class="side-label">WORKSPACE</div>
+    <a class="nav active" href="#upload">◈ <span>JAR workspace</span></a>
+    <a class="nav" href="#classes">▤ <span>Class explorer</span></a>
+    <a class="nav" href="#endpoints">⇄ <span>Generated endpoints</span></a>
+    <div class="side-note"><span class="dot"></span> Local runtime <b>READY</b><p>Runs on this computer only.</p></div>
+    <div class="side-bottom">BUILT FOR JAVA DEVELOPERS<br><span>Prototype · v0.1.0</span></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><span class="eyebrow">DEVELOPER TOOLING / OVERVIEW</span><h1>API workspace</h1></div><div class="top-right"><span class="local-pill"><i></i> LOCAL ONLY</span><span class="avatar">J</span></div></header>
+    <section class="hero">
+      <div><div class="eyebrow red">BYTECODE → REST API</div><h2>Your Java methods.<br><em>Ready for HTTP.</em></h2><p>Inspect compiled classes, choose trusted methods, and expose them as testable JSON endpoints.</p><a class="hero-link" href="#upload">Start with a JAR <span>↘</span></a></div>
+      <div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="cube"><span>JAR</span><b>↔</b><strong>REST</strong></div><span class="float-tag tag-a">CLASS SCANNER</span><span class="float-tag tag-b">HTTP / JSON</span></div>
+    </section>
+    <div class="stats">
+      <div class="stat"><span>UPLOADED ARCHIVE</span><strong id="statJar">None</strong><small>Current session</small></div>
+      <div class="stat"><span>DISCOVERED CLASSES</span><strong id="statClasses">0</strong><small>Scanned with ASM</small></div>
+      <div class="stat"><span>EXPOSED ENDPOINTS</span><strong id="statEndpoints">0</strong><small>Explicitly approved</small></div>
+    </div>
+    <section class="panel" id="upload">
+      <div class="panel-heading"><div><span class="step">01</span><h3>Upload compiled library</h3><p>Choose a trusted Java archive (.jar) to inspect its bytecode metadata.</p></div><span class="panel-icon">⇧</span></div>
+      <form id="uploadForm" class="upload-zone">
+        <input id="jarFile" name="jar" type="file" accept=".jar,application/java-archive" hidden>
+        <div class="upload-symbol">↑</div><strong>Drop your JAR here</strong><span>or <button type="button" class="text-button" id="browse">browse files</button></span>
+        <small>JAR files · Max request size 50 MB</small>
+        <button class="button primary" type="submit" id="uploadButton">Scan archive <span>→</span></button>
+      </form>
+      <div id="uploadMessage" class="message" aria-live="polite"></div>
+    </section>
+    <section class="panel" id="classes">
+      <div class="panel-heading"><div><span class="step">02</span><h3>Class & method explorer</h3><p>Review discovered signatures. Only public static methods are eligible in this MVP.</p></div><span class="panel-icon">⌘</span></div>
+      <div class="toolbar"><div class="searchbox"><span>⌕</span><input id="search" placeholder="Search classes or methods..." aria-label="Search classes or methods"></div><span class="count" id="classCount">0 classes</span></div>
+      <div id="classList" class="empty-state"><div class="empty-icon">⌁</div><strong>No classes scanned yet</strong><p>Upload a JAR above to populate the explorer.</p></div>
+    </section>
+    <section class="panel" id="endpoints">
+      <div class="panel-heading"><div><span class="step">03</span><h3>Generated endpoints</h3><p>Test exposed methods using JSON request bodies and inspect the response.</p></div><span class="panel-icon">↗</span></div>
+      <div id="endpointList" class="empty-state compact"><div class="empty-icon">⇄</div><strong>No endpoints yet</strong><p>Select an eligible method and expose it to create your first route.</p></div>
+    </section>
+    <footer>AutoRESTifier <span>·</span> A local-first Java tooling experiment <span class="foot-right">JAVA 25 · MAVEN · ASM</span></footer>
+  </main>
+</div>
+<div id="toast" class="toast" role="status"></div>
+<script src="/app.js"></script>
+</body>
+</html>
